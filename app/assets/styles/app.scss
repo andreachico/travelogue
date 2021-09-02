@@ -1,3 +1,4 @@
-body {
-    background-color: darkslategray;
-}
+@import "base";
+@import "content";
+@import "header";
+@import "footer";
