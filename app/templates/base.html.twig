@@ -13,7 +13,26 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+
     <body>
-        {% block body %}{% endblock %}
+    {% block header %}
+        {% include 'templates/header/header.html.twig' %}
+    {% endblock%}
+
+    {% block content %}
+        <div class="content">
+            <div class="title">{{ title }}</div>
+            <div class="nav-bar">
+                <ul>
+                    <li class="nav-menu"><a href="#">Home</a></li>
+                    <li class="nav-menu"><a href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% bloch footer %}
+        {% include 'templates/footer/footer.html.twig' %}
+    {% endblock %}
     </body>
 </html>
