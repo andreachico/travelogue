@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    //background-color: blue;{
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+
+    :hover {
+        transition: all .2s;
+    }
+}
+
+h2 {
+    font-family: 'Comfortaa', cursive;
+}

@@ -1,21 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends './templates/base.html.twig' %}
 
-{% block content %}
+{% block body %}
     <div class="head mt-5">
-
-       {% include('header/header.html.twig') %}
-
+        <div class="content">
+            <div class="title">{{ title }}</div>
+            <div class="nav-bar">
+                <ul>
+                    <li class="nav-menu"><a href="#">Home</a></li>
+                    <li class="nav-menu"><a href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="header-intro">{{ slogan }}</div>
         <button class="see-blogs"><a href="#">Scroll to blogs</a></button>
     </div>
 
     <div class="blog-snippet">
-        <svg class="icon icon-earth">
-            <use xlink:href="symbol-defs#icon-earth"></use>
-        </svg>
+        {#            <svg class="icon icon-earth">#}
+        {#                <use xlink:href="./assets/img/symbol-defs#icon-earth"></use>#}
+        {#            </svg>#}
         <h2 class="latest">Latest posts</h2>
         <div class="blog-snippet-content">
-            <img class="blog-snippet-img" src="assets/img/test.jpeg" alt="test" height="300px" width="500px">
+            <img class="blog-snippet-img" src="./assets/img/background-img.jpg" alt="test" height="300px" width="500px">
             <div class="blog-snippet-text">
                 <p class="date-published">21 August 2021</p>
                 <h2 class="blog-title">Lorem ipsum dolor sit amet.</h2>
@@ -37,6 +43,8 @@
         </ul>
     </div>
 
-    {% include('footer/footer.html.twig') %}
+    <div class="footer mb-1">
+        <p>&copy; 2021. All rights reserved.</p>
+    </div>
 
 {% endblock %}
