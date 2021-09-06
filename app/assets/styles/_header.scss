@@ -4,7 +4,7 @@
     //object-fit: cover;
     opacity: 0.5;
     transform: skewY(-11deg);
-    height: 45rem;
+    //height: 45rem;
     position: relative;
 
     :before {
@@ -55,6 +55,7 @@
         transform: skewY(11deg);
         display: flex;
         justify-content: space-between;
+        height: 45rem;
 
         .title {
             text-transform: uppercase;
