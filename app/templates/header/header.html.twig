@@ -1,13 +1,12 @@
 {% block header %}
 
-    <div class="content">
+
         <div class="title">{{ title }}</div>
         <div class="nav-bar">
             <ul>
-                <li class="nav-menu"><a href="#">Home</a></li>
-                <li class="nav-menu"><a href="#">About</a></li>
+                <li class="nav-menu"><a href="{{ path('home_page') }}">Home</a></li>
+                <li class="nav-menu"><a href="{{ path('about') }}">About</a></li>
             </ul>
         </div>
-    </div>
 
 {% endblock %}

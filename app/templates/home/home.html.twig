@@ -2,15 +2,17 @@
 
 {% block content %}
     <div class="head mt-5">
-        {% include 'header/header.html.twig' %}
-        <div class="header-intro">{{ slogan }}</div>
-        <button class="see-blogs"><a href="#">Scroll to blogs</a></button>
+        <div class="content">
+            {% include 'header/header.html.twig' %}
+            <div class="header-intro">{{ slogan }}</div>
+            <button class="see-blogs"><a href="#">Scroll to blogs</a></button>
+        </div>
     </div>
 
     <div class="blog-snippet">
-        {#            <svg class="icon icon-earth">#}
-        {#                <use xlink:href="./assets/img/symbol-defs#icon-earth"></use>#}
-        {#            </svg>#}
+{#      <svg class="icon icon-earth">#}
+{#          <use xlink:href="./assets/img/symbol-defs#icon-earth"></use>#}
+{#      </svg>#}
         <h2 class="latest">Latest posts</h2>
         <div class="blog-snippet-content">
             <img class="blog-snippet-img" src="./assets/img/background-img.jpg" alt="test" height="300px" width="500px">
