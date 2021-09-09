@@ -4,8 +4,8 @@
     //object-fit: cover;
     opacity: 0.5;
     transform: skewY(-11deg);
-    //height: 45rem;
     position: relative;
+    //margin-top: 5rem;
 
     :before {
         position: absolute;
@@ -20,8 +20,6 @@
     .header-intro {
         font-family: 'Kalam', cursive;
         color: #ffffff;
-        //transform: skewY(11deg);
-
         position: absolute;
         top: 35%;
         font-size: 4rem;
@@ -31,14 +29,13 @@
     }
 
     .see-blogs {
-        font-size: 1rem;
-        margin: 0;
+        font-size: 1.75rem;
         position: absolute;
         top: 75%;
         left: 45%;
-        transform: scale(2);
         border: none;
-        padding: .5rem;
+        border-radius: 4rem;
+        padding: 1rem;
 
         a {
             color: #80427b;
@@ -50,63 +47,65 @@
         }
     }
 
+
+
     .content {
         position: relative;
         transform: skewY(11deg);
         display: flex;
         justify-content: space-between;
         height: 45rem;
+    }
 
-        .title {
-            text-transform: uppercase;
-            font-family: 'Comfortaa', cursive;
-            margin: 0 0 0 1rem;
-            color: #142436;
-            letter-spacing: 10px;
-            font-size: 3rem;
-        }
+    .title {
+        text-transform: uppercase;
+        font-family: 'Comfortaa', cursive;
+        margin: 0 0 0 1rem;
+        color: #142436;
+        letter-spacing: 10px;
+        font-size: 3rem;
+    }
 
-        .nav-bar {
-            margin-right: 10rem;
-            cursor: default;
+    .nav-bar {
+        margin-right: 10rem;
+        cursor: default;
 
-            ul {
-                display: flex;
-                justify-content: flex-end;
-                flex-direction: row;
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
 
-                .nav-menu {
-                    list-style-type: none;
-                    padding: 0 1.75rem;
-                    font-family: 'Comfortaa', cursive;
+            .nav-menu {
+                list-style-type: none;
+                padding: 0 1.75rem;
+                font-family: 'Comfortaa', cursive;
 
-                    a {
-                        color: #ffffff;
-                        font-size: 1rem;
-                    }
+                a {
+                    color: #ffffff;
+                    font-size: 1rem;
+                }
 
-                    :after {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        margin: auto;
-                        width: 0;
-                        content: '';
-                        color: transparent;
-                        background: #aaa;
-                        height: 1px;
-                        //color: #;
-                    }
+                :after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 0;
+                    content: '';
+                    color: transparent;
+                    background: #aaa;
+                    height: 1px;
+                    //color: #;
+                }
 
-                    :hover {
-                        color: #1a1e21;
-                    }
+                :hover {
+                    color: #1a1e21;
+                }
 
-                    :hover:after {
-                        width: 100%;
-                        transition: all .5s;
-                    }
+                :hover:after {
+                    width: 100%;
+                    transition: all .5s;
                 }
             }
         }

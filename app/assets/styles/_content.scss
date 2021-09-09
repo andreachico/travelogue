@@ -65,3 +65,17 @@
         }
     }
 }
+
+.text-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.text-content {
+    line-height: 2rem;
+    font-weight: 200;
+    background-color: aliceblue;
+    padding: 1rem 3rem;
+    box-shadow: 7px 7px 5px darkslategray;
+}

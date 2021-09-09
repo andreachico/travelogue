@@ -4,4 +4,11 @@
     margin: 6% 16%;
     position: relative;
     transform: skewY(11deg);
+    height: 37rem;
+}
+
+.header {
+    transform: skewY(11deg);
+    display: flex;
+    justify-content: space-between;
 }
