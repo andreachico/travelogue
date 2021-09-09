@@ -1,7 +1,11 @@
 // TABLETS
-@media only screen and (min-width: 600px) {
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+
     .head {
-        //margin: 0!important;
+        //margin: 0;
 
         .page-head {
             display: flex;
@@ -16,8 +20,7 @@
             }
 
             .nav-bar {
-                margin-right: 0;
-                margin-top: 1rem;
+                margin: 1rem 1rem 0 0;
 
                 ul {
                     justify-content: center;
@@ -70,4 +73,82 @@
 // PHONES
 @media only screen and (max-width: 600px) {
 
+    .head {
+        width: auto;
+
+        .page-head {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transform: skewY(11deg);
+            padding-top: 3rem;
+
+            .title {
+                font-size: 2rem;
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav-bar {
+                margin: 1rem 1rem 0 0;
+
+                ul {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .content {
+            height: 35rem;
+
+            .header-intro {
+                font-size: 3rem;
+                top: 7%;
+                margin: 0 15%;
+            }
+
+            .see-blogs {
+                top: 76%;
+                left: 30%;
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .blog-snippet {
+        margin-top: 5rem;
+
+        .latest {
+            font-size: 2rem;
+        }
+
+            .blog-snippet-content {
+                margin: 1rem 2rem;
+                padding: 1rem;
+                flex-direction: column;
+
+                .blog-snippet-text {
+                    padding: 2rem 0;
+
+
+                    .blog-snippet-img {
+                        height: 20rem;
+                        width: auto;
+                    }
+                }
+            }
+
+    }
+
+    .about-us {
+        margin: 5%;
+        height: 60rem;
+
+        .text-content {
+            padding: 1rem 1.5rem;
+        }
+    }
+    .footer {
+        margin-top: 5rem;
+    }
 }
