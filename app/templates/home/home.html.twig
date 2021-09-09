@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <div class="head mt-5">
-        <div class="content">
+    <div class="head">
+        <div class="page-head">
             {% include 'header/header.html.twig' %}
-            <div class="header-intro">{{ slogan }}</div>
-            <button class="see-blogs"><a href="#">Scroll to blogs</a></button>
+        </div>
+{#            <div class="header-content">#}
+        <div class="content">
+                <div class="header-intro">{{ slogan }}</div>
+                <button class="see-blogs"><a href="#">Scroll to blogs</a></button>
+{#            </div>#}
         </div>
     </div>
 
