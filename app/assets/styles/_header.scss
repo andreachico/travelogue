@@ -2,7 +2,7 @@
     background-image: linear-gradient(45deg, #6af7ba, #80427b);
     //background-image: url('./assets/img/background-img.jpg');
     //object-fit: cover;
-    opacity: 0.75;
+    //opacity: 0.75;
     transform: skewY(-11deg);
     position: relative;
 
@@ -15,7 +15,7 @@
         background-image: linear-gradient(45deg, #654ea3, #eaafc8);
         transform: skewY(-11deg);
     }
-
+}
     .page-head {
         display: flex;
         flex-direction: column;
@@ -48,6 +48,15 @@
                     a {
                         color: #ffffff;
                         font-size: 1rem;
+
+                        :target {
+                            color: red;
+                        }
+
+                        :focus {
+                            color: red;
+                        }
+
                     }
 
                     :after {
@@ -61,7 +70,6 @@
                         color: transparent;
                         background: #aaa;
                         height: 1px;
-                        //color: #;
                     }
 
                     :hover {
@@ -72,6 +80,10 @@
                         width: 100%;
                         transition: all .5s;
                     }
+
+                    :active {
+                        color: #1a1e21;
+                    }
                 }
             }
         }
@@ -81,7 +93,7 @@
         font-family: 'Kalam', cursive;
         color: #ffffff;
         position: absolute;
-        top: 35%;
+        top: 26%;
         font-size: 4rem;
         text-align: center;
         margin: 0 10%;
@@ -91,7 +103,7 @@
     .see-blogs {
         font-size: 1.75rem;
         position: absolute;
-        top: 75%;
+        top: 66%;
         left: 45%;
         border: none;
         border-radius: 4rem;
@@ -114,4 +126,3 @@
         justify-content: space-between;
         height: 45rem;
     }
-}
