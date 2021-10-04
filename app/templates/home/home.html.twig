@@ -7,34 +7,27 @@
         </div>
         <div class="content">
                 <div class="header-intro">{{ slogan }}</div>
-                <button class="see-blogs"><a href="#">Scroll to blogs</a></button>
+                <button class="see-blogs"><a href="{{ path('show_blogs') }}">See all blogs</a></button>
         </div>
     </div>
 
     <div class="blog-snippet">
-{#      <svg class="icon icon-earth">#}
-{#          <use xlink:href="./assets/img/symbol-defs#icon-earth"></use>#}
-{#      </svg>#}
         <h2 class="latest">Latest posts</h2>
-        <div class="blog-snippet-content">
-            <img class="blog-snippet-img" src="./assets/img/test.jpeg" alt="test">
-            <div class="blog-snippet-text">
-                <p class="date-published">21 August 2021</p>
-                <h2 class="blog-title">Lorem ipsum dolor sit amet.</h2>
-                <div class="short-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolore facilis id illum ipsam numquam repellat sapiente? Accusantium amet eos ex, in, minus porro quibusdam quisquam reprehenderit repudiandae temporibus vel!</div>
-                <button class="read-more"><a class="read-more" href="#">Read more</a></button>
-            </div>
-        </div>
+{#        {% for blog in blogs %}#}
+            <div class="blog-snippet-content">
+                <img class="blog-snippet-img" src="{{ asset('https://images.unsplash.com/photo-1558024160-4bcccd62f54c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3300&q=80') }}" alt="test">
+                <div class="blog-snippet-text">
+                    <p class="date-published">21 August 2021</p>
+                    <h2 class="blog-title">Lorem ipsum dolor sit amet.</h2>
+                    <div class="short-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolore facilis id illum ipsam numquam repellat sapiente? Accusantium amet eos ex, in, minus porro quibusdam quisquam reprehenderit repudiandae temporibus vel!</div>
+                    <button class="read-more"><a class="read-more" href="#">Read more</a></button>
+                </div>
+{#        <div class="blogs transform">#}
+{#            {{ render(path('latest_blogs', { max:3 } )) }}#}
+{#        </div>#}
 
-        <div class="blog-snippet-content">
-            <img class="blog-snippet-img" src="./assets/img/test.jpeg" alt="test">
-            <div class="blog-snippet-text">
-                <p class="date-published">21 August 2021</p>
-                <h2 class="blog-title">Lorem ipsum dolor sit amet.</h2>
-                <div class="short-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolore facilis id illum ipsam numquam repellat sapiente? Accusantium amet eos ex, in, minus porro quibusdam quisquam reprehenderit repudiandae temporibus vel!</div>
-                <button class="read-more"><a class="read-more" href="#">Read more</a></button>
             </div>
-        </div>
+{#        {% endfor %}#}
     </div>
 
     <div class="head mt-5">
