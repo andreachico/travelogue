@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {% for blog in blogs %}
+    <div class="blogs transform">
+        <div class="blog-snippet-content">
+            <img class="blog-snippet-img" src="{{ asset('https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80') }}" alt="test">
+            <div class="blog-snippet-text">
+                <p class="date-published">{{ blog.date | date('j F Y') }}</p>
+                <h2 class="blog-title">{{ blog.title }}</h2>
+                <div class="short-description">{{ blog.context | slice(0, 200) ~ '...'  }}</div>
+                <button class="read-more"><a class="read-more" href="{{ path('open_blog', {'id' : blog.id }) }}">Read more</a></button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
