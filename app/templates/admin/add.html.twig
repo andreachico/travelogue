@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{#{% form_theme form 'foundation_5_layout.html.twig' %}#}
+
+{% block content %}
+    <div class="content-background ">
+        <div class="header page-head">
+            {% include 'header/header.html.twig' %}
+        </div>
+        <div class="blogs transform">
+            <div class="blog-content">
+{#                {{ form_start(form) }}#}
+{#                {{ form_end(form) }}#}
+
+                {{ form('add_blog') }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
