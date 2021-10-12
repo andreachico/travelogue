@@ -3,13 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Blog;
-use Doctrine\DBAL\Types\DateTimeType;
-use Doctrine\DBAL\Types\TextType;
-use Exception;
+use App\Form\BlogType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Twig\Environment;
 
 class BlogController  extends AbstractController
 {
@@ -87,5 +87,31 @@ class BlogController  extends AbstractController
             'blog' => $blog,
             'title' => $title,
         ]);
+    }
+
+    /**
+     * @Route("/create-blog", name="create_blog")
+     *
+     */
+    public function createBlog(Environment $twig, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $blog = new Blog();
+        $form = $this->createForm(BlogType::class, $blog);
+
+        $form->handleRequest($request);
+        $title = 'TRAVELOGUE';
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $entityManager->persist($blog);
+            $entityManager->flush();
+
+            return new Response('Blog added to the database!' . $blog->getTitle() . ' created!');
+        }
+
+        return new Response($twig->render('admin/add.html.twig', [
+           'add_blog' => $form->createView(),
+           'title' => $title
+        ]));
     }
 }
