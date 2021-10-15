@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\BlogRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,7 +32,7 @@ class Blog
     protected $title;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     protected $date;
 
@@ -45,16 +46,32 @@ class Blog
      */
     protected $slug;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $image;
+
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * @param string $title
+     *
+     * @return $this
+     */
     public function setTitle(string $title): self
     {
         $this->title = $title;
@@ -62,23 +79,39 @@ class Blog
         return $this;
     }
 
-    public function getDate(): ?\DateTime
+    /**
+     * @return DateTime|null
+     */
+    public function getDate(): ?DateTime
     {
         return $this->date;
     }
 
-    public function setDate(\DateTime $date): self
+    /**
+     * @param DateTime $date
+     *
+     * @return $this
+     */
+    public function setDate(DateTime $date): self
     {
         $this->date = $date;
 
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getContext(): ?string
     {
         return $this->context;
     }
 
+    /**
+     * @param string $context
+     *
+     * @return $this
+     */
     public function setContext(string $context): self
     {
         $this->context = $context;
@@ -86,14 +119,42 @@ class Blog
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getSlug(): ?string
     {
         return $this->slug;
     }
 
+    /**
+     * @param string $slug
+     *
+     * @return $this
+     */
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param $image
+     *
+     * @return Blog
+     */
+    public function setImage($image): Blog
+    {
+        $this->image = $image;
 
         return $this;
     }
