@@ -5,14 +5,12 @@ and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1) {
 
 
-        .page-head {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            transform: skewY(11deg);
-            padding-top: 5rem;
-
-        }
+    .page-head {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform: skewY(11deg);
+        padding-top: 5rem;
 
         .title {
             display: flex;
@@ -30,23 +28,28 @@ and (-webkit-min-device-pixel-ratio: 1) {
                 justify-content: center;
             }
         }
+    }
 
 
 
-        .content {
-            height: 30rem;
-        }
+    .content {
+        height: 30rem;
+    }
 
-        .header-intro {
-            top: 10%;
-        }
+    .header-intro {
+        top: 10%;
+    }
 
-        .see-blogs {
-            font-size: 1.25rem;
-            top: 75%;
-            left: 38%;
-        }
+    .see-blogs {
+        font-size: 1.25rem;
+        top: 75%;
+        left: 38%;
+    }
 
+    .blog-content {
+        margin: 12rem 5rem;
+        padding: 1.5rem;
+    }
 
     .blog-snippet {
         margin-top: 8rem;
