@@ -51,28 +51,96 @@ class BlogController  extends AbstractController
     }
 
     /**
-     * @Route("/create-blog", name="create_blog")
+     * add a data to the database
+     * @Route("/write-blog", name="create_blog")
      *
      */
-    public function createBlog(Environment $twig, Request $request, EntityManagerInterface $entityManager): Response
+    public function createBlog(Request $request, EntityManagerInterface $entityManager): Response
     {
         $blog = new Blog();
+
         $form = $this->createForm(BlogType::class, $blog);
 
         $form->handleRequest($request);
-        $title = 'TRAVELOGUE';
 
-        if ($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($blog);
             $entityManager->flush();
 
-            return new Response('Blog added to the database!' . $blog->getTitle() . ' created!');
+            return new Response($this->redirectToRoute('blog_data'));
         }
 
-        return new Response($twig->render('admin/add.html.twig', [
-           'add_blog' => $form->createView(),
-           'title' => $title
-        ]));
+        return $this->renderForm(
+            'admin/add.html.twig',
+            [
+                'form' => $form,
+                'add_blog' => $blog,
+            ]
+        );
+    }
+
+    /**
+     * edit the data in the database
+     * @Route("/edit-blog/{id}", name="edit_blog")
+     *
+     */
+    public function editBlog(string $id, Request $request): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $blogPost = $entityManager->getRepository(Blog::class)->find($id);
+
+        $form = $this->createForm(BlogType::class, $blogPost);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $blogPost = $form->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($blogPost);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('blog_data');
+        }
+
+        return $this->renderForm('admin/add.html.twig',
+        [
+           'form' => $form
+        ]);
+    }
+
+    /**
+     * delete data from the database
+     * @Route("/delete-blog/{id}", name="delete_blog")
+     *
+     */
+    public function deleteBlog(string $id) : Response
+    {
+        $blog = $this->getDoctrine()->getRepository(Blog::class)->find($id);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($blog);
+        $entityManager->flush();
+
+        $response = new Response($this->redirectToRoute('blog_data'));
+        $response->send();
+
+        return $response;
+    }
+
+    /**
+     * render all the data from the database
+     * @Route("/blog-data", name="blog_data")
+     *
+     */
+    public function blogDB(EntityManagerInterface $entityManager) : Response
+    {
+        $blogs = $entityManager->getRepository(Blog::class)->findAll();
+
+        return $this->render(
+            'admin/blog_data.html.twig',
+            [
+                'blogs' => $blogs,
+            ]
+        );
     }
 }
