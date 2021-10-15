@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="content-background ">
+    <div class="page-head">
+        {% include 'header/header.html.twig' %}
+    </div>
+        <div class="blogs transform pt-5 m-lg-5">
+        <button class="btn btn-dark add-btn"><a class="btn-text" href="{{ path('create_blog') }}">Add Blog Post</a></button>
+            <table id="blogs" class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Context</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Slug</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+            {% for blog in blogs %}
+                <tbody>
+                    <tr>
+                        <td>{{ blog.title }}</td>
+                        <td>{{ blog.date | date('j F Y') }}</td>
+                        <td>{{ blog.context|length > 50 ? blog.context|slice(0, 40) ~ '...' : blog.context  }}</td>
+                        <td>{{ blog.image|length > 50 ? blog.image|slice(0, 40) ~ '...' : blog.image  }}</td>
+                        <td>{{ blog.slug }}</td>
+                        <td></td>
+                        <td><button class="btn btn-secondary btn-text"><a class="btn-text" href="{{ path('edit_blog' , {'id' : blog.id }) }}">Edit</a></button></td>
+                        <td><button class="btn btn-secondary btn-text"><a class="btn-text" href="{{ path('delete_blog' , {'id' : blog.id }) }}">Delete</a></button></td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+            </table>
+        </div>
+</div>
+{% endblock %}
