@@ -16,12 +16,32 @@ class HomeController extends AbstractController
      */
     public function home(): Response
     {
-        $title = 'TRAVELOGUE';
         $slogan = 'Traveling opens door to creating memories!';
 
-        return $this->render('home/home.html.twig', [
-            'title' => $title,
-            'slogan' => $slogan,
-        ]);
+        $blogs = $this->getDoctrine()->getRepository(Blog::class)->findAll(
+
+        );
+
+
+
+        return $this->render(
+            'home/home.html.twig',
+            [
+                'blogs' => $blogs,
+                'slogan' => $slogan
+            ]
+        );
+    }
+
+    public function blogList(): Response
+    {
+        $blogs = $this->getDoctrine()->getRepository(Blog::class)->findAll();
+
+        return $this->render(
+            'blogs/blogs.html.twig',
+            [
+                'blogs' => $blogs,
+            ]
+        );
     }
 }
