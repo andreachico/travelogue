@@ -1,10 +1,6 @@
 .head {
     background-image: linear-gradient(45deg, #6af7ba, #80427b);
-    //background-image: url('./assets/img/background-img.jpg');
-    //object-fit: cover;
-    opacity: 0.5;
     transform: skewY(-11deg);
-    //height: 45rem;
     position: relative;
 
     :before {
@@ -83,6 +79,15 @@
                     a {
                         color: #ffffff;
                         font-size: 1rem;
+
+                        :target {
+                            color: red;
+                        }
+
+                        :focus {
+                            color: red;
+                        }
+
                     }
 
                     :after {
@@ -96,7 +101,6 @@
                         color: transparent;
                         background: #aaa;
                         height: 1px;
-                        //color: #;
                     }
 
                     :hover {
@@ -107,8 +111,54 @@
                         width: 100%;
                         transition: all .5s;
                     }
+
+                    :active {
+                        color: #1a1e21;
+                    }
                 }
             }
         }
     }
-}
+
+    .header-intro {
+        font-family: 'Kalam', cursive;
+        color: #ffffff;
+        position: absolute;
+        top: 26%;
+        font-size: 4rem;
+        text-align: center;
+        margin: 0 10%;
+        letter-spacing: 7px;
+    }
+
+    .see-blogs {
+        font-size: 1.75rem;
+        position: absolute;
+        top: 66%;
+        left: 45%;
+        border: none;
+        border-radius: 4rem;
+        padding: 1rem;
+
+        a {
+            color: #80427b;
+        }
+
+        :hover {
+            transition: all .2s;
+            color: #142436;
+        }
+    }
+
+    .content {
+        position: relative;
+        transform: skewY(11deg);
+        display: flex;
+        justify-content: space-between;
+        height: 45rem;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+    }
