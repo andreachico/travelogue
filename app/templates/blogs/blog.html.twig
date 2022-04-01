@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="content-background ">
+        <div class="page-head">
+            {% include 'header/header.html.twig' %}
+        </div>
+            <div class="blogs transform">
+{#                <svg class="icon icon-earth">#}
+{#                    <use xlink:href="./assets/img/symbol-defs#icon-earth"></use>#}
+{#                </svg>#}
+                <div class="blog-content">
+                    <img class="blog-img" src="{{ blog.image }}" alt="test">
+                    <div class="blog-text">
+                        <p class="date-published mt-4">{{ blog.date | date('j F Y') }}</p>
+                        <h2 class="blog-title">{{ blog.title }}</h2>
+                        <div class="short-description">{{ blog.context }}</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
