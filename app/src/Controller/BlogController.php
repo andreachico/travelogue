@@ -55,7 +55,7 @@ class BlogController  extends AbstractController
      * @Route("/write-blog", name="create_blog")
      *
      */
-    protected function createBlog(Request $request, EntityManagerInterface $entityManager): Response
+    public function createBlog(Request $request, EntityManagerInterface $entityManager): Response
     {
         $blog = new Blog();
 
