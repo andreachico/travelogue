@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Blog;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -21,6 +22,13 @@ class BlogType extends AbstractType
             ->add('context', TextareaType::class, ['required' => true])
             ->add('image', TextType::class, ['required' => true])
             ->add('slug', TextType::class, ['required' => true])
+//            ->add('images', TextType::class, [
+//                'multiple' => true,
+//                'attr'     => [
+//                    'accept' => 'image/*',
+//                    'multiple' => 'multiple'
+//                ]
+//            ])
             ->add('update', SubmitType::class);
     }
 

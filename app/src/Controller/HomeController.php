@@ -18,17 +18,13 @@ class HomeController extends AbstractController
     {
         $slogan = 'Traveling opens door to creating memories!';
 
-        $blogs = $this->getDoctrine()->getRepository(Blog::class)->findAll(
-
-        );
-
-
+        $blogs = $this->getDoctrine()->getRepository(Blog::class)->findAll();
 
         return $this->render(
             'home/home.html.twig',
             [
                 'blogs' => $blogs,
-                'slogan' => $slogan
+                'slogan' => $slogan,
             ]
         );
     }

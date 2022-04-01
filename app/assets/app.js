@@ -22,6 +22,7 @@ require("bootstrap/dist/js/bootstrap.js");
 
 // or you can include specific pieces
 // require('bootstrap/js/dist/tooltip');
-// require('bootstrap/js/dist/popover');
-
+// require('bootstrap/js/dist/popover');4
 import './js/vueapp.js';
+
+import './main';

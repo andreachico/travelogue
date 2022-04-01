@@ -142,7 +142,7 @@ class Blog
     /**
      * @return string
      */
-    public function getImage()
+    public function getImage(): string
     {
         return $this->image;
     }

@@ -11,35 +11,31 @@
         </div>
     </div>
 
-    <div class="blog-snippet">
-        <h2 class="latest">Latest posts</h2>
+{#    <div class="blog-snippet">#}
+{#        <h2 class="latest">Latest posts</h2>#}
 {#        {% for blog in blogs %}#}
-            <div class="blog-snippet-content">
-                <img class="blog-snippet-img" src="{{ asset('https://images.unsplash.com/photo-1558024160-4bcccd62f54c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3300&q=80') }}" alt="test">
-                <div class="blog-snippet-text">
-                    <p class="date-published">21 August 2021</p>
-                    <h2 class="blog-title">Lorem ipsum dolor sit amet.</h2>
-                    <div class="short-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolore facilis id illum ipsam numquam repellat sapiente? Accusantium amet eos ex, in, minus porro quibusdam quisquam reprehenderit repudiandae temporibus vel!</div>
-                    <button class="read-more"><a class="read-more" href="#">Read more</a></button>
-                </div>
-{#        <div class="blogs transform">#}
-{#            {{ render(path('latest_blogs', { max:3 } )) }}#}
-{#        </div>#}
-
-            </div>
+{#            <div class="blog-snippet-content">#}
+{#                <img class="blog-snippet-img" src="{{ blog.image }}" alt="test">#}
+{#                <div class="blog-snippet-text">#}
+{#                    <p class="date-published">{{ blog.date | date('j F Y') }}</p>#}
+{#                    <h2 class="blog-title">{{ blog.title }}</h2>#}
+{#                    <div class="short-description">{{ blog.context | slice(0, 200) ~ '...' }}</div>#}
+{#                    <button class="read-more"><a class="read-more" href="{{ path('open_blog', {'id' : blog.id }) }}">Read more</a></button>#}
+{#                </div>#}
+{#                </div>#}
 {#        {% endfor %}#}
-    </div>
+{#    </div>#}
 
-    <div class="head mt-5 socials">
-        <ul>
-            <li class="icons">
-                test
-                <a href="#" target="_blank" class="icons__link">
-                    <svg class="icons__icon icon-facebook2">
-                        <use xlink:href="../app/sprite.svg#icon-facebook2"></use>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </div>
+{#    <div class="head mt-5 socials">#}
+{#        <ul>#}
+{#            <li class="icons">#}
+{#                <a href="#" target="_blank" class="icons__link">#}
+{#                    <svg class="icons__icon icon-facebook2">#}
+{#                        <use xlink:href="../app/sprite.svg#icon-facebook2"></use>#}
+{#                    </svg>#}
+{#                </a>#}
+{#                    <i class="fab fa-facebook">test</i>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
 {% endblock %}

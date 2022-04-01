@@ -55,7 +55,7 @@ class BlogController  extends AbstractController
      * @Route("/write-blog", name="create_blog")
      *
      */
-    public function createBlog(Request $request, EntityManagerInterface $entityManager): Response
+    protected function createBlog(Request $request, EntityManagerInterface $entityManager): Response
     {
         $blog = new Blog();
 
@@ -74,7 +74,7 @@ class BlogController  extends AbstractController
             'admin/add.html.twig',
             [
                 'form' => $form,
-                'add_blog' => $blog,
+                'add_blog' => $blog
             ]
         );
     }
@@ -84,7 +84,7 @@ class BlogController  extends AbstractController
      * @Route("/edit-blog/{id}", name="edit_blog")
      *
      */
-    public function editBlog(string $id, Request $request): Response
+    protected function editBlog(string $id, Request $request): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
         $blogPost = $entityManager->getRepository(Blog::class)->find($id);
@@ -113,7 +113,7 @@ class BlogController  extends AbstractController
      * @Route("/delete-blog/{id}", name="delete_blog")
      *
      */
-    public function deleteBlog(string $id) : Response
+    protected function deleteBlog(string $id) : Response
     {
         $blog = $this->getDoctrine()->getRepository(Blog::class)->find($id);
 

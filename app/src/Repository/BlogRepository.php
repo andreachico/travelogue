@@ -36,6 +36,22 @@ class BlogRepository extends ServiceEntityRepository
     }
     */
 
+    public function findByLatestBlog()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p.* FROM AppBundle:Blog p.* ORDER BY p.date DESC'
+            )
+            ->getResult();
+    }
+
+    public function listAction(): void
+    {
+        $latestBlogs = $this->getDoctrine()
+            ->getRepository(Blog::class)
+            ->findByLatestBlog();
+    }
+
     /*
     public function findOneBySomeField($value): ?Blog
     {
