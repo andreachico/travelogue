@@ -84,7 +84,7 @@ class BlogController  extends AbstractController
      * @Route("/edit-blog/{id}", name="edit_blog")
      *
      */
-    protected function editBlog(string $id, Request $request): Response
+    public function editBlog(string $id, Request $request): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
         $blogPost = $entityManager->getRepository(Blog::class)->find($id);
@@ -113,7 +113,7 @@ class BlogController  extends AbstractController
      * @Route("/delete-blog/{id}", name="delete_blog")
      *
      */
-    protected function deleteBlog(string $id) : Response
+    public function deleteBlog(string $id) : Response
     {
         $blog = $this->getDoctrine()->getRepository(Blog::class)->find($id);
 
